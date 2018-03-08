@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./Assets/CSS/Style.css" />
+</head>
+<body>
+  
+    <div id = "psychicgame">
+    <h1>The Psychic Game</h1>
+
+    <p>Guess what letter I'm thinking of: </p>
+    <p>Wins:</p>
+    <p>Loses: </p>
+    <p>Guesses Left: </p>
+    <p>Your guesses so far: </p>
+    </div>
+
+    <script type ="text/javascript">   
+
+      
+   
+
+    let numWins = 0;
+    let numLoses = 0;
+    let numGuesses = 9;
+    let guessBank = [];
+    let computerPicks = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y", "Z"];
+
+document.onkeyup = function(event) {
+
+    var userPicks = String.fromCharCode(event.keyCode).toLowerCase();
+
+    let computerGuess = computerPicks[Math.floor(Math.random() * computerPicks.length)];
+    guessBank.push(userPicks);
+    
+
+    if ((userPicks === computerGuess)){
+        numWins = numWins + 1;
+        numGuesses = 9;
+        guessBank.lenth = 0;
+
+    }
+    else if (numGuesses == 0) {
+        numGuesses = 9;
+        guessBank.lenth = 0;
+    }
+
+    else if (userPicks !== computerGuess){
+        numGuesses = numGuesses - 1;
+
+    }
+
+    let html =
+    "<h1>The Psychic Game </h1>" +
+    "<p>Guess what letter I'm thinkng of:" + userPicks + "</p>" +
+    "<p>Wins: " + numWins + "</p>" +
+    "<p>Loses: " + numLoses + "</p>" +
+    "<p>Guesses Left: " + numGuesses + "</p>" +
+    "<p>Your guesses so far:" + guessBank + "</p>";
+
+    document.querySelector('#psychicgame').innerHTML = html;
+    
+
+};
+
+</script>
+
+  </body>
+
+</html>
+
