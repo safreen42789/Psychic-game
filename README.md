@@ -1,1 +1,3 @@
 # Psychic-game
+
+Welcome to the Psychic game!  This is a simple yet interactive game that allows the user to input alphabets as an attempt to guess what alphabet the computer is "thinking" of.  Begin the game by simply pressing on any of the keys and continue to guess away.  Your "Loses" begin to accrue each time you are out of your alotted 10 guesses and "wins" add up each time you correctly guess the same alphabet the computer has guessed.  If you have any questions or advice please send telepath them along to s.afreen42789@gmail.com.  Happy guessing!
